@@ -15,7 +15,7 @@ h1 { font-weight: normal; font-size: 22px; letter-spacing: 4px; margin: 0 0 24px
 .choices button { display: block; width: 100%; text-align: left; background: #f8faf5; border: 1px solid #c3cbbd; border-radius: 6px; padding: 10px 14px; margin: 0 0 8px; font: inherit; color: inherit; cursor: pointer; }
 .choices button:hover { background: #e6ebe0; }
 .again { margin-top: 30px; color: #6f7c70; font-size: 15px; }
-.again a { color: #4f6a55; cursor: pointer; text-decoration: underline; }
+.again a, .again-btn { color: #4f6a55; cursor: pointer; text-decoration: underline; background: none; border: none; padding: 0; font: inherit; font-size: 15px; }
 </style>
 </head>
 <body>
@@ -44,7 +44,7 @@ function buttons(menu) {
   CH.innerHTML = '';
   if (S.end) {
     var a = document.createElement('div'); a.className = 'again';
-    var l = document.createElement('a'); l.textContent = '再来一局'; l.onclick = begin;
+    var l = document.createElement('button'); l.className = 'again-btn'; l.textContent = '再来一局'; l.onclick = begin;
     a.appendChild(l); CH.appendChild(a); return;
   }
   menu.forEach(function (kv) {
